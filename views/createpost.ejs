@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Post | POST_X</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center px-4">
+
+  <div class="w-full max-w-md bg-gray-800 p-8 rounded-xl shadow-lg">
+    <h1 class="text-2xl font-bold mb-6 text-center">📸 Create a New Post</h1>
+
+    <form action="/posts/create" method="POST" enctype="multipart/form-data" class="space-y-4">
+      <!-- Caption -->
+      <div>
+        <label for="caption" class="block text-sm font-medium mb-1">Caption</label>
+        <textarea name="caption" id="caption" rows="3" required
+                  class="w-full px-4 py-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+      
+
+      <!-- Media Upload -->
+      <div>
+        <label for="media" class="block text-sm font-medium mb-1">Upload Image or Short Video</label>
+        <input type="file" name="media" id="media" accept="image/*,video/*" required
+               class="w-full px-3 py-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none">
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+        Post
+      </button>
+    </form>
+
+    <!-- Back Button -->
+    <div class="text-center mt-4">
+      <a href="/users/profile" class="text-blue-400 hover:underline text-sm">← Back to Profile</a>
+    </div>
+  </div>
+
+</body>
+</html>
