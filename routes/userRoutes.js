@@ -40,10 +40,11 @@ router.post('/users/edit', authenticate, upload.single('profilePic'), async (req
   const updatedData = {bio};
 
   if (req.file) {
-    profilePic = `/uploads/profilepics/${req.file.filename}`;
+   const profilePic = `/uploads/profilePics/${req.file.filename}`;
+   updatedData.profilePic = profilePic;
   }
 
-await User.findByIdAndUpdate(req.userId, updatedData);
+await User.findByIdAndUpdate(req.userId,updatedData);
 res.redirect('/users/profile');
 
 })
