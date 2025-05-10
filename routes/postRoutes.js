@@ -8,7 +8,7 @@ const path = require('path');
 
 // GET /posts/create - Render the form
 router.get('/posts/create', verifyUser, (req, res) => {
-    res.render('createPost');
+    res.render('createpost');
 });
 
 // POST /posts/create - Handle form submission
